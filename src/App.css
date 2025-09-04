@@ -1,0 +1,183 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Global background for entire website */
+.space-bg {
+  position: relative;
+  background-image: url('/lovable-uploads/06ebd8c1-ec21-45ca-8361-a0d29ceb552b.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* Mobile background */
+@media (max-width: 768px) {
+  .space-bg {
+    background-image: url('/lovable-uploads/5578b6c3-2e9f-4b07-aa7d-9f1a89828eb2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+}
+
+/* Dark overlay for better text readability */
+.space-bg::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Global Multiple Satellites Animation for entire website */
+.space-bg::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/lovable-uploads/e7791ff9-f6eb-495f-a9f4-5baa127c9d44.png');
+  background-size: 80px 80px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  animation: global-satellite-orbit 55s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 20px rgba(0, 188, 212, 0.9));
+}
+
+/* Additional global satellites */
+.space-bg {
+  position: relative;
+}
+
+.space-bg:has(*) {
+  overflow: visible;
+}
+
+.space-bg:before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Create pseudo-elements for additional satellites */
+.space-bg > *:first-child::before {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background-image: url('/lovable-uploads/e7791ff9-f6eb-495f-a9f4-5baa127c9d44.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: global-satellite-orbit-2 70s linear infinite reverse;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 15px rgba(0, 188, 212, 0.7));
+}
+
+.space-bg > *:nth-child(2)::before {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-image: url('/lovable-uploads/e7791ff9-f6eb-495f-a9f4-5baa127c9d44.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: global-satellite-orbit-3 85s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 12px rgba(0, 188, 212, 0.6));
+}
+
+@keyframes global-satellite-orbit {
+  0% {
+    transform: rotate(0deg) translateX(250px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(250px) rotate(-360deg);
+  }
+}
+
+@keyframes global-satellite-orbit-2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(180px) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(180px) rotate(-360deg);
+  }
+}
+
+@keyframes global-satellite-orbit-3 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(320px) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(320px) rotate(-360deg);
+  }
+}
+
+/* Ensure content stays above satellite */
+.space-bg > * {
+  position: relative;
+  z-index: 2;
+}
