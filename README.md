@@ -15,4 +15,10 @@ This project is developed to represent the activities, events, and updates of th
 ---
 
 
-## 📂 Project Structure
+---
+
+## 📖 How to Use
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/tahsin-bit/gscsc-web-site.git
+
